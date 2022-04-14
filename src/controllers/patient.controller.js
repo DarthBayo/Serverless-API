@@ -1,5 +1,5 @@
 module.exports = {
-  async getPatient(_, res) {
+  async getPatient (_, res) {
     return res.json({
       message: 'Hello, World!'
     })

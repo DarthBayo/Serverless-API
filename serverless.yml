@@ -1,7 +1,7 @@
 org: giovani
 app: amt-serverless-api
 service: amt-serverless-api
-  
+
 provider:
   name: aws
   runtime: nodejs14.x
@@ -18,3 +18,17 @@ functions:
     description: Serverless API
     events:
       - httpApi: '*'
+
+plugins:
+  - serverless-offline
+  - serverless-dotenv-plugin
+
+custom:
+  dotenv:
+    path: ./
+    required:
+      include:
+        - DDB_TABLE
+        - S3_BUCKET
+      env:
+        - API_KEY
