@@ -1,0 +1,20 @@
+org: giovani
+app: amt-serverless-api
+service: amt-serverless-api
+  
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'sa-east-1'}
+  memorySize: 128
+  timeout: 3
+  httpApi:
+    cors: true
+
+functions:
+  handler:
+    handler: src/handler.handler
+    description: Serverless API
+    events:
+      - httpApi: '*'
