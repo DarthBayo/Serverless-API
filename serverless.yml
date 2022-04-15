@@ -1,5 +1,3 @@
-org: giovani
-app: amt-serverless-api
 service: amt-serverless-api
 
 provider:
@@ -7,6 +5,13 @@ provider:
   runtime: nodejs14.x
   stage: ${opt:stage, 'dev'}
   region: ${opt:region, 'sa-east-1'}
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - ec2:CreateNetworkInterface
+        - ec2:DescribeNetworkInterfaces
+        - ec2:DeleteNetworkInterface
+      Resource: "*"
   memorySize: 128
   timeout: 3
   httpApi:
@@ -18,6 +23,13 @@ functions:
     description: Serverless API
     events:
       - httpApi: '*'
+    vpc:
+      securityGroupIds:
+        - sg-02f5eda9078cfc936
+      subnetIds:
+        - subnet-06b64946d5bd245cc
+        - subnet-07dd851f8623f0cdb
+        - subnet-0061246b77354e87b
 
 plugins:
   - serverless-offline
@@ -25,10 +37,11 @@ plugins:
 
 custom:
   dotenv:
-    path: ./
     required:
-      include:
-        - DDB_TABLE
-        - S3_BUCKET
       env:
-        - API_KEY
+        - DB_DIALECT
+        - DB_HOST
+        - DB_PORT
+        - DB_USERNAME
+        - DB_PASSWORD
+        - DB_DATABASE
