@@ -23,18 +23,18 @@ module.exports = {
       },
       created_at: {
         type: Sequelize.DataTypes.DATE,
-        allowNull: false,
+        allowNull: false
       },
       updated_at: {
         type: Sequelize.DataTypes.DATE,
-        allowNull: false,
+        allowNull: false
       },
       deleted_at: {
-        type: Sequelize.DataTypes.DATE,
+        type: Sequelize.DataTypes.DATE
       }
     })
   },
-  
+
   async down (queryInterface, Sequelize) {
     await queryInterface.dropTable('users')
   }
