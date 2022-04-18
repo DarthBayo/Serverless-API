@@ -9,13 +9,22 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true
       },
+      user_id: {
+        type: Sequelize.DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'users',
+          key: 'id'
+        }
+      },
       name: {
         type: Sequelize.DataTypes.STRING,
         allowNull: false
       },
       email: {
         type: Sequelize.DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
       },
       birth_date: {
         type: Sequelize.DataTypes.DATE,
@@ -39,7 +48,11 @@ module.exports = {
       },
       city_id: {
         type: Sequelize.DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        references: {
+          model: 'cities',
+          key: 'id'
+        }
       },
       city_name: {
         type: Sequelize.DataTypes.STRING,
