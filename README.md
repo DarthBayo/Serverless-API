@@ -1,18 +1,19 @@
 # AMT
+Test to fullstack dev
 
-## Commands  
+## Commands
 Run migrations:  
-  
-  npx sequelize db:migrate
 
+    npx sequelize db:migrate
+    
 Clear whole database:  
-  
-  npx sequelize db:migrate:undo:all
+
+    npx sequelize db:migrate:undo:all
 
 Run seeders:  
-  
-  npx sequelize db:seed:all
+
+    npx sequelize db:seed:all
   
 Undo all seeders:  
-  
-  npx sequelize db:seed:undo:all
+
+    npx sequelize db:seed:undo:all
