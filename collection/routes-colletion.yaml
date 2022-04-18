@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2022-04-18T19:32:16.251Z
+__export_date: 2022-04-18T22:22:09.140Z
 __export_source: insomnia.desktop.app:v2022.2.1
 resources:
   - _id: req_3c0f008df2e540a5a5c38d0cded8d853
@@ -110,7 +110,7 @@ resources:
     _type: request_group
   - _id: req_f40a9f23d29e456e9c6aed263ab0973f
     parentId: fld_22c0f797dcd94cdbb8c4f5c88a456df4
-    modified: 1650305018465
+    modified: 1650320463005
     created: 1650216823741
     url: "{{ _.dev.users }}"
     name: /
@@ -121,7 +121,7 @@ resources:
       text: |-
         {
         	"name": "Test User",
-        	"email": "testusermail@gmail.com",
+        	"email": "testuser@gmail.com",
         	"password": "testpassword"
         }
     parameters: []
@@ -141,10 +141,10 @@ resources:
     _type: request
   - _id: req_84a53fa0730f41779ae84cde8b3a60dc
     parentId: fld_22c0f797dcd94cdbb8c4f5c88a456df4
-    modified: 1650305022865
+    modified: 1650320442092
     created: 1650225074011
-    url: "{{ _.dev.users }}"
-    name: /
+    url: "{{ _.dev.users }}/testuser@gmail.com"
+    name: /:userEmail
     description: ""
     method: PUT
     body:
@@ -152,7 +152,7 @@ resources:
       text: |-
         {
         	"name": "Test User Edit",
-        	"email": "testusermail@gmail.com",
+        	"email": "testusermail1@gmail.com",
         	"password": "testpassword"
         }
     parameters: []
@@ -160,10 +160,6 @@ resources:
       - name: Content-Type
         value: application/json
         id: pair_29334ac7af7746dfad71b8886b0adfaa
-      - id: pair_8fb9ea26ffe046859488f61cef7bd20e
-        name: user-mail
-        value: test@gmail.com
-        description: ""
     authentication: {}
     metaSortKey: -1650235801801.5
     isPrivate: false
@@ -176,19 +172,15 @@ resources:
     _type: request
   - _id: req_2cb4264bbb9c4e5097fc572af938ac4e
     parentId: fld_22c0f797dcd94cdbb8c4f5c88a456df4
-    modified: 1650236877052
+    modified: 1650320459355
     created: 1650235801789
-    url: "{{ _.dev.users }}"
-    name: /
+    url: "{{ _.dev.users }}/testusermail1@gmail.com"
+    name: /:userEmail
     description: ""
     method: DELETE
     body: {}
     parameters: []
-    headers:
-      - id: pair_17ad97de11d440d4b46d2e127ab5900d
-        name: user-mail
-        value: giovaniE@gmail.com
-        description: ""
+    headers: []
     authentication: {}
     metaSortKey: -1650235801789
     isPrivate: false
@@ -201,19 +193,15 @@ resources:
     _type: request
   - _id: req_967264596afb4aa8851bed66360ca551
     parentId: fld_5397378d22f1493faa934d06f1b1d220
-    modified: 1650287749061
+    modified: 1650319811482
     created: 1650284256344
-    url: "{{ _.dev.patients }}"
-    name: /
+    url: "{{ _.dev.patients }}/1"
+    name: /:userId
     description: ""
     method: GET
     body: {}
     parameters: []
-    headers:
-      - id: pair_73557cf76577429e91d654249a51ce4d
-        name: user-id
-        value: "1"
-        description: ""
+    headers: []
     authentication: {}
     metaSortKey: -1650284256344
     isPrivate: false
@@ -236,10 +224,10 @@ resources:
     _type: request_group
   - _id: req_823e46568e98478392af8a2f31a53f84
     parentId: fld_5397378d22f1493faa934d06f1b1d220
-    modified: 1650304986695
+    modified: 1650320124798
     created: 1650284849383
     url: "{{ _.dev.patients }}"
-    name: /
+    name: /:userId
     description: ""
     method: POST
     body:
@@ -247,7 +235,7 @@ resources:
       text: |-
         {
         	"name": "Test Name",
-        	"email": "testmail@gmail.com",
+        	"email": "test@gmail.com",
         	"birthDate": "2022-04-18",
         	"address": "Test Street",
         	"numberStreet": "4",
@@ -255,17 +243,14 @@ resources:
         	"zipCode": "85710000",
         	"cityId": 3122,
         	"cityName": "Santo Antônio do Sudoeste",
-        	"stateAcronym": "PR"
+        	"stateAcronym": "PR",
+        	"userId": "1"
         }
     parameters: []
     headers:
       - name: Content-Type
         value: application/json
         id: pair_6ba0ce63164c40688b4566d76af24b2f
-      - id: pair_a96b2b17b3e44831919f8d84756ea2bf
-        name: user-id
-        value: "1"
-        description: ""
     authentication: {}
     metaSortKey: -1650284256294
     isPrivate: false
@@ -278,10 +263,10 @@ resources:
     _type: request
   - _id: req_71f160528dc440bd865349d82c70a4e9
     parentId: fld_5397378d22f1493faa934d06f1b1d220
-    modified: 1650305566619
+    modified: 1650320124462
     created: 1650288718715
-    url: "{{ _.dev.patients }}/6"
-    name: /:id
+    url: "{{ _.dev.patients }}/"
+    name: /
     description: ""
     method: PUT
     body:
@@ -304,10 +289,6 @@ resources:
       - name: Content-Type
         value: application/json
         id: pair_26974513c76c42258b0c81b3cdabbcc8
-      - id: pair_5d49d5f1e700496885559d513fc93e63
-        name: user-id
-        value: "1"
-        description: ""
     authentication: {}
     metaSortKey: -1650284256244
     isPrivate: false
@@ -320,10 +301,10 @@ resources:
     _type: request
   - _id: req_e548b8bcce154df7a815a0609981aa16
     parentId: fld_5397378d22f1493faa934d06f1b1d220
-    modified: 1650291225482
+    modified: 1650320139565
     created: 1650289278087
-    url: "{{ _.dev.patients }}/"
-    name: /
+    url: "{{ _.dev.patients }}/test@gmail.com"
+    name: /:patientEmail
     description: ""
     method: DELETE
     body: {}
@@ -375,7 +356,7 @@ resources:
     _type: api_spec
   - _id: env_a3c552b6a46843d9898671a66cb9b57c
     parentId: env_316edaed10dd7b30c7e0cdba842352ef0f1bf47f
-    modified: 1650305558595
+    modified: 1650316712302
     created: 1650216793612
     name: dev
     data:
@@ -398,15 +379,15 @@ resources:
     _type: environment
   - _id: env_cdabd144cc2c46889b89ecb082637d2e
     parentId: env_316edaed10dd7b30c7e0cdba842352ef0f1bf47f
-    modified: 1650305566133
+    modified: 1650316738068
     created: 1650305491422
     name: prod
     data:
       dev:
-        users: http://localhost:3000/users/
-        patients: http://localhost:3000/patients/
-        states: http://localhost:3000/states/
-        cities: http://localhost:3000/cities/
+        users: https://ofc3zltall.execute-api.sa-east-1.amazonaws.com/users/
+        patients: https://ofc3zltall.execute-api.sa-east-1.amazonaws.com/patients/
+        states: https://ofc3zltall.execute-api.sa-east-1.amazonaws.com/states/
+        cities: https://ofc3zltall.execute-api.sa-east-1.amazonaws.com/cities/
     dataPropertyOrder:
       "&":
         - dev
