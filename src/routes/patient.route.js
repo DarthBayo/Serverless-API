@@ -1,19 +1,12 @@
 const router = require('express').Router()
-const User = require('./../database/models/User')
+// const User = require('./../database/models/User')
 
 const patientController = require('./../controllers/patients')
 
 router.use(async (req, res, next) => {
   const userId = req.headers['user-id']
 
-  const user = await User.findOne({
-    where: {
-      id: userId,
-      deleted_at: null
-    }
-  })
-
-  if (!userId || !user) { return res.status(404).json('User not found!') }
+  if (!userId) { return res.status(404).json('User not found!') }
 
   next()
 })
