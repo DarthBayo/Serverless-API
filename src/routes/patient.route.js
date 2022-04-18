@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const User = require('./../database/models/User')
 
-const patientController = require('./../controllers/patient')
+const patientController = require('./../controllers/patients')
 
 router.use(async (req, res, next) => {
   const userId = req.headers['user-id']
