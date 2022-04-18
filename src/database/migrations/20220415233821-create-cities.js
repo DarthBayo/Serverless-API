@@ -11,7 +11,11 @@ module.exports = {
       },
       state_id: {
         type: Sequelize.DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        references: {
+          model: 'states',
+          key: 'id'
+        }
       },
       state_acronym: {
         type: Sequelize.DataTypes.STRING,
