@@ -3,11 +3,11 @@ const errorHandler = require('./../../helpers/errorHandler')
 
 module.exports = {
   async deleteUser (req, res) {
-    const userMail = req.headers['user-mail']
+    const { userEmail } = req.params
 
     const foundedUser = await User.findOne({
       where: {
-        email: userMail,
+        email: userEmail,
         deleted_at: null
       }
     })
@@ -18,7 +18,7 @@ module.exports = {
         deleted_at: new Date()
       }, {
         where: {
-          email: userMail,
+          email: userEmail,
           deleted_at: null
         },
         limit: 1

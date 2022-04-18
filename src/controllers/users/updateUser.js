@@ -3,7 +3,7 @@ const errorHandler = require('./../../helpers/errorHandler')
 
 module.exports = {
   async updateUser (req, res) {
-    const userMail = req.headers['user-mail']
+    const { userEmail } = req.params
     const { name, email, password } = req.body
 
     const foundedUser = await User.findOne({
@@ -21,7 +21,7 @@ module.exports = {
         password: password
       }, {
         where: {
-          email: userMail,
+          email: userEmail,
           deleted_at: null
         },
         limit: 1

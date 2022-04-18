@@ -3,7 +3,7 @@ const errorHandler = require('./../../helpers/errorHandler')
 
 module.exports = {
   async getPatientsByUser (req, res) {
-    const userId = req.headers['user-id']
+    const { userId } = req.params
 
     try {
       const patients = await Patient.findAll({

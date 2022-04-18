@@ -3,8 +3,7 @@ const errorHandler = require('./../../helpers/errorHandler')
 
 module.exports = {
   async createPatient (req, res) {
-    const userId = req.headers['user-id']
-    const { name, email, birthDate, address, numberStreet, district, zipCode, cityId, cityName, stateAcronym } = req.body
+    const { name, email, birthDate, address, numberStreet, district, zipCode, cityId, cityName, stateAcronym, userId } = req.body
 
     try {
       const [patient, isNewRecord] = await Patient.findOrCreate({

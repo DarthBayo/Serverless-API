@@ -3,16 +3,7 @@ const errorHandler = require('./../../helpers/errorHandler')
 
 module.exports = {
   async updatePatient (req, res) {
-    const { id } = req.params
     const { name, email, birthDate, address, numberStreet, district, zipCode, cityId, cityName, stateAcronym } = req.body
-
-    const patient = await Patient.findOne({
-      where: {
-        id: id,
-        deleted_at: null
-      }
-    })
-    if (!patient) { return res.status(404).json('Patient not found!') }
 
     try {
       await Patient.update({
@@ -28,7 +19,7 @@ module.exports = {
         state_acronym: stateAcronym
       }, {
         where: {
-          id: id,
+          email: email,
           deleted_at: null
         },
         limit: 1
