@@ -1,5 +1,5 @@
 const User = require('./../../database/models/User')
-const errorHandler = require('./helpers/errorHandler')
+const errorHandler = require('./../../helpers/errorHandler')
 
 module.exports = {
   async updateUser (req, res) {
@@ -28,8 +28,8 @@ module.exports = {
       })
 
       return res.json('User updated succefully!')
-    } catch ({ message }) {
-      return res.status(400).json(errorHandler.catchHandler(message))
+    } catch ({ errors }) {
+      return res.status(400).json(errorHandler.catchHandler(errors[0].message))
     }
   }
 }

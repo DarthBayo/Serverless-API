@@ -1,5 +1,5 @@
 const User = require('./../../database/models/User')
-const errorHandler = require('./helpers/errorHandler')
+const errorHandler = require('./../../helpers/errorHandler')
 
 module.exports = {
   async createUser (req, res) {
@@ -20,8 +20,8 @@ module.exports = {
         await newUser.save()
 
         return res.status(201).json(newUser.id)
-      } catch ({ message }) {
-        return res.status(400).json(errorHandler.catchHandler(message))
+      } catch ({ errors }) {
+        return res.status(400).json(errorHandler.catchHandler(errors[0].message))
       }
     }
 

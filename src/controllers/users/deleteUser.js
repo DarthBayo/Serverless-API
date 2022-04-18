@@ -1,5 +1,5 @@
 const User = require('./../../database/models/User')
-const errorHandler = require('./helpers/errorHandler')
+const errorHandler = require('./../../helpers/errorHandler')
 
 module.exports = {
   async deleteUser (req, res) {
@@ -25,8 +25,8 @@ module.exports = {
       })
 
       return res.end()
-    } catch ({ message }) {
-      return res.status(400).json(errorHandler.catchHandler(message))
+    } catch ({ errors }) {
+      return res.status(400).json(errorHandler.catchHandler(errors[0].message))
     }
   }
 }
