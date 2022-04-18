@@ -1,0 +1,421 @@
+_type: export
+__export_format: 4
+__export_date: 2022-04-18T19:32:16.251Z
+__export_source: insomnia.desktop.app:v2022.2.1
+resources:
+  - _id: req_3c0f008df2e540a5a5c38d0cded8d853
+    parentId: fld_9f6523caf8c848e3b5d1b79828960e8c
+    modified: 1650291258507
+    created: 1650291251865
+    url: "{{ _.dev.states }}"
+    name: /
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - id: pair_36d2d7cd96be4facb8d0f0dde2f70e4d
+        name: ""
+        value: ""
+        description: ""
+    authentication: {}
+    metaSortKey: -1650291251865
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_9f6523caf8c848e3b5d1b79828960e8c
+    parentId: wrk_79078aac5d02470cb5e0999fe86e8a17
+    modified: 1650291883554
+    created: 1650291233083
+    name: States
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1650291633082
+    _type: request_group
+  - _id: wrk_79078aac5d02470cb5e0999fe86e8a17
+    parentId: null
+    modified: 1649804274319
+    created: 1649804274319
+    name: A Mad Test
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_5ae73cf268d54d908cda1b67b5aedf27
+    parentId: fld_ee6b547a2ea14396a5b5c00a70ce0d30
+    modified: 1650294021030
+    created: 1650291638562
+    url: "{{ _.dev.cities }}/18"
+    name: /:stateId
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1650291638562
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_ee6b547a2ea14396a5b5c00a70ce0d30
+    parentId: wrk_79078aac5d02470cb5e0999fe86e8a17
+    modified: 1650291633032
+    created: 1650291633032
+    name: Cities
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1650291633032
+    _type: request_group
+  - _id: req_ce63ea23a9d6443eb03c2f33e1e18e1a
+    parentId: fld_22c0f797dcd94cdbb8c4f5c88a456df4
+    modified: 1650284833389
+    created: 1650216907804
+    url: "{{ _.dev.users }}"
+    name: /
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1650235801889
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_22c0f797dcd94cdbb8c4f5c88a456df4
+    parentId: wrk_79078aac5d02470cb5e0999fe86e8a17
+    modified: 1650291241718
+    created: 1649805050770
+    name: Users
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1649805050770
+    _type: request_group
+  - _id: req_f40a9f23d29e456e9c6aed263ab0973f
+    parentId: fld_22c0f797dcd94cdbb8c4f5c88a456df4
+    modified: 1650305018465
+    created: 1650216823741
+    url: "{{ _.dev.users }}"
+    name: /
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Test User",
+        	"email": "testusermail@gmail.com",
+        	"password": "testpassword"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_e30f51dd8d224e3381076fd1220d5d40
+    authentication: {}
+    metaSortKey: -1650235801839
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_84a53fa0730f41779ae84cde8b3a60dc
+    parentId: fld_22c0f797dcd94cdbb8c4f5c88a456df4
+    modified: 1650305022865
+    created: 1650225074011
+    url: "{{ _.dev.users }}"
+    name: /
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Test User Edit",
+        	"email": "testusermail@gmail.com",
+        	"password": "testpassword"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_29334ac7af7746dfad71b8886b0adfaa
+      - id: pair_8fb9ea26ffe046859488f61cef7bd20e
+        name: user-mail
+        value: test@gmail.com
+        description: ""
+    authentication: {}
+    metaSortKey: -1650235801801.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_2cb4264bbb9c4e5097fc572af938ac4e
+    parentId: fld_22c0f797dcd94cdbb8c4f5c88a456df4
+    modified: 1650236877052
+    created: 1650235801789
+    url: "{{ _.dev.users }}"
+    name: /
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers:
+      - id: pair_17ad97de11d440d4b46d2e127ab5900d
+        name: user-mail
+        value: giovaniE@gmail.com
+        description: ""
+    authentication: {}
+    metaSortKey: -1650235801789
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_967264596afb4aa8851bed66360ca551
+    parentId: fld_5397378d22f1493faa934d06f1b1d220
+    modified: 1650287749061
+    created: 1650284256344
+    url: "{{ _.dev.patients }}"
+    name: /
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - id: pair_73557cf76577429e91d654249a51ce4d
+        name: user-id
+        value: "1"
+        description: ""
+    authentication: {}
+    metaSortKey: -1650284256344
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_5397378d22f1493faa934d06f1b1d220
+    parentId: wrk_79078aac5d02470cb5e0999fe86e8a17
+    modified: 1650291246023
+    created: 1649805046736
+    name: Patients
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1649805046736
+    _type: request_group
+  - _id: req_823e46568e98478392af8a2f31a53f84
+    parentId: fld_5397378d22f1493faa934d06f1b1d220
+    modified: 1650304986695
+    created: 1650284849383
+    url: "{{ _.dev.patients }}"
+    name: /
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Test Name",
+        	"email": "testmail@gmail.com",
+        	"birthDate": "2022-04-18",
+        	"address": "Test Street",
+        	"numberStreet": "4",
+        	"district": "Test District",
+        	"zipCode": "85710000",
+        	"cityId": 3122,
+        	"cityName": "Santo Antônio do Sudoeste",
+        	"stateAcronym": "PR"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_6ba0ce63164c40688b4566d76af24b2f
+      - id: pair_a96b2b17b3e44831919f8d84756ea2bf
+        name: user-id
+        value: "1"
+        description: ""
+    authentication: {}
+    metaSortKey: -1650284256294
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_71f160528dc440bd865349d82c70a4e9
+    parentId: fld_5397378d22f1493faa934d06f1b1d220
+    modified: 1650305566619
+    created: 1650288718715
+    url: "{{ _.dev.patients }}/6"
+    name: /:id
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Test Name Edit",
+        	"email": "testmail@gmail.com",
+        	"birthDate": "2022-04-18",
+        	"address": "Test Street",
+        	"numberStreet": "4",
+        	"district": "Test District",
+        	"zipCode": "85710000",
+        	"cityId": 3122,
+        	"cityName": "Santo Antônio do Sudoeste",
+        	"stateAcronym": "PR"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_26974513c76c42258b0c81b3cdabbcc8
+      - id: pair_5d49d5f1e700496885559d513fc93e63
+        name: user-id
+        value: "1"
+        description: ""
+    authentication: {}
+    metaSortKey: -1650284256244
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_e548b8bcce154df7a815a0609981aa16
+    parentId: fld_5397378d22f1493faa934d06f1b1d220
+    modified: 1650291225482
+    created: 1650289278087
+    url: "{{ _.dev.patients }}/"
+    name: /
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers:
+      - id: pair_b3a5b30ed2ef4465bde857f444d30cd5
+        name: patient-email
+        value: test@gmail.com
+        description: ""
+      - id: pair_e3b815772c82499c872c613447ffd8df
+        name: user-id
+        value: "1"
+        description: ""
+    authentication: {}
+    metaSortKey: -1650284256194
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_316edaed10dd7b30c7e0cdba842352ef0f1bf47f
+    parentId: wrk_79078aac5d02470cb5e0999fe86e8a17
+    modified: 1650216800116
+    created: 1649804274333
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: {}
+    color: null
+    isPrivate: false
+    metaSortKey: 1649804274333
+    _type: environment
+  - _id: jar_316edaed10dd7b30c7e0cdba842352ef0f1bf47f
+    parentId: wrk_79078aac5d02470cb5e0999fe86e8a17
+    modified: 1649804274336
+    created: 1649804274336
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_583fa26be3714f4b96bbaef7944cdc06
+    parentId: wrk_79078aac5d02470cb5e0999fe86e8a17
+    modified: 1649804274326
+    created: 1649804274326
+    fileName: A Mad Test
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_a3c552b6a46843d9898671a66cb9b57c
+    parentId: env_316edaed10dd7b30c7e0cdba842352ef0f1bf47f
+    modified: 1650305558595
+    created: 1650216793612
+    name: dev
+    data:
+      dev:
+        users: http://localhost:3000/users/
+        patients: http://localhost:3000/patients/
+        states: http://localhost:3000/states/
+        cities: http://localhost:3000/cities/
+    dataPropertyOrder:
+      "&":
+        - dev
+      "&~|dev":
+        - users
+        - patients
+        - states
+        - cities
+    color: "#7dcb67"
+    isPrivate: false
+    metaSortKey: 1650216793612
+    _type: environment
+  - _id: env_cdabd144cc2c46889b89ecb082637d2e
+    parentId: env_316edaed10dd7b30c7e0cdba842352ef0f1bf47f
+    modified: 1650305566133
+    created: 1650305491422
+    name: prod
+    data:
+      dev:
+        users: http://localhost:3000/users/
+        patients: http://localhost:3000/patients/
+        states: http://localhost:3000/states/
+        cities: http://localhost:3000/cities/
+    dataPropertyOrder:
+      "&":
+        - dev
+      "&~|dev":
+        - users
+        - patients
+        - states
+        - cities
+    color: "#cb6767"
+    isPrivate: false
+    metaSortKey: 1650305491422
+    _type: environment
